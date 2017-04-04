@@ -1,0 +1,51 @@
+.dashed-box {
+    position:relative;
+    width:500px;
+    height:100px;
+    border:2px solid #ccc;
+    /*可以注释掉下行看看效果*/
+    overflow: hidden;
+}
+.dashed-box:hover {
+    width:504px;
+    height:104px;
+    border:none;
+}
+.dashed-box:hover .dashed-top {
+    width:2000px;
+    height:0px;
+    border-bottom:2px #ccc dashed;
+    position:absolute;
+    top:0;
+    left:-1400px;
+}
+.dashed-box:hover .dashed-bottom {
+    position:absolute;
+    width:2000px;
+    height:0px;
+    left:0;
+    bottom:0;
+    border-bottom:2px #ccc dashed;
+}
+.dashed-box:hover .dashed-right {
+    position:absolute;
+    width:0;
+    height:2000px;
+    right:0;
+    top:-1600px;
+    border-left:2px #ccc dashed;
+}
+.dashed-box:hover .dashed-left {
+    position:absolute;
+    width:0px;
+    height:2000px;
+    left:0;
+    top:-1600px;
+    border-left:2px #ccc dashed;
+}
+.dashed-box-content {
+    padding:15px;
+}
+.dashed-box:hover .dashed-box-content {
+    padding:16.5px;
+}

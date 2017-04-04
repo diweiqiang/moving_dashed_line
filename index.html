@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="dashed-box">
+    <div class="dashed-top"></div>
+    <div class="dashed-left"></div>
+    <div class="dashed-right"></div>
+    <div class="dashed-bottom"></div>
+    <div class="dashed-box-content">try moving cursor here</div>
+</div>
+
+<script src="jquery-3.1.0.js"></script>
+<script>
+    setInterval(function () {
+        var $left=$('.dashed-top').css('left');
+        var $top = $(".dashed-bottom").css("left");
+        $left = parseInt($left);
+        $top = parseInt($top);
+        if ($left < 0) {
+            $left += 2;
+        } else {
+            $left = -1400;
+        }
+
+        if ($top > -1000) {
+            $top -= 2;
+        } else {
+            $top = 0;
+        }
+
+        $(".dashed-top").css("left", $left + "px");
+        $(".dashed-bottom").css("left", $top + "px");
+        $(".dashed-right").css("top", $left + "px");
+        $(".dashed-left").css("top", $top + "px");
+    },80);
+</script>
+</body>
+</html>
