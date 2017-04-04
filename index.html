@@ -17,26 +17,27 @@
 <script src="jquery-3.1.0.js"></script>
 <script>
     setInterval(function () {
-        var $left=$('.dashed-top').css('left');
-        var $top = $(".dashed-bottom").css("left");
-        $left = parseInt($left);
-        $top = parseInt($top);
-        if ($left < 0) {
-            $left += 2;
+        var $ini_top_left=$('.dashed-top').css('left');
+        var $ini_bottom_left = $(".dashed-bottom").css("left");
+        $ini_top_left = parseInt($ini_top_left);
+        $ini_bottom_left = parseInt($ini_bottom_left);
+        if ($ini_top_left < 0) {
+            $ini_top_left += 2;
         } else {
-            $left = -1400;
+            $ini_top_left = -1400;
         }
 
-        if ($top > -1000) {
-            $top -= 2;
+        if ($ini_bottom_left > -1000) {
+            $ini_bottom_left -= 2;
         } else {
-            $top = 0;
+            $ini_bottom_left = 0;
         }
 
-        $(".dashed-top").css("left", $left + "px");
-        $(".dashed-bottom").css("left", $top + "px");
-        $(".dashed-right").css("top", $left + "px");
-        $(".dashed-left").css("top", $top + "px");
+        //上边和右边的变化规律是一样的，都是在不断正在增大；
+        $(".dashed-top").css("left", $ini_top_left + "px");
+        $(".dashed-bottom").css("left", $ini_bottom_left + "px");
+        $(".dashed-right").css("top", $ini_top_left + "px");
+        $(".dashed-left").css("top", $ini_bottom_left + "px");
     },80);
 </script>
 </body>
